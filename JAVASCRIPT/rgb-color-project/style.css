@@ -53,7 +53,9 @@ button{
     transition: all  .3s;
     --webkit-transition: all  .3s;
     --moz-transition: all  .3s;
-    outline: none;
+}
+button:focus{
+    outline: 0;
 }
 
 #message{
