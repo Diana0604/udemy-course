@@ -1,4 +1,5 @@
 //constants
+var difficultyModeNums = [3, 6];
 var hardNum = 6;
 var easyNum = 3;
 var HARD = 0;
@@ -14,11 +15,12 @@ var h1BackgroundColor = "steelblue";
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easyBtn");
-var hardBtn = document.querySelector("#hardBtn");
+var modeButtons = document.querySelectorAll(".mode");
+//var easyBtn = document.querySelector("#easyBtn");
+//var hardBtn = document.querySelector("#hardBtn");
 var colorDisplay = document.getElementById("colorDisplay");
 var squares = document.querySelectorAll(".square");
-var currentNum = hardNum;
+var currentNum = difficultyModeNums[1];
 
 //--------------------------MAIN CODE---------------------------
 generateAndDisplayRandomColors();
@@ -26,8 +28,7 @@ generateAndDisplayRandomColors();
 addClickListeners();
 //general buttons
 addResetButtonListener();
-addEasyModeButtonListener();
-addHardModeButtonListener();
+addModeButtonListener();
 
 //--------------------------- COLOR GENERATION -----------------------
 //generate one random color
@@ -50,7 +51,7 @@ function generateRandomColors(num){
 function changeSquareColorsTo(colors){
     for(var i = 0; i < squares.length; i++){
         if(colors[i]){
-            squares[i].style.display = "inline";
+            squares[i].style.display = "block";
             squares[i].style.backgroundColor = colors[i];
         } else{
             squares[i].style.display = "none";
@@ -119,27 +120,18 @@ function addResetButtonListener(){
         generateAndDisplayRandomColors();
     });    
 }
-function addEasyModeButtonListener(){
-    easyBtn.addEventListener("click", function(){
-        toggleDifficultyTo(EASY);
-        currentNum = easyNum;
-        generateAndDisplayRandomColors();
-    });
-}
-function addHardModeButtonListener(){ 
-    hardBtn.addEventListener("click", function(){
-        toggleDifficultyTo(HARD);
-        currentNum = hardNum;
-        generateAndDisplayRandomColors();
-    });
-}
-
-function toggleDifficultyTo(difficulty){
-    if(difficulty === EASY) {
-        easyBtn.classList.add('selected');
-        hardBtn.classList.remove('selected');
-    } else{
-        easyBtn.classList.remove('selected');
-        hardBtn.classList.add('selected');
+function addModeButtonListener(){
+    for(var i = 0; i < modeButtons.length; i++){
+         modeButtons[i].addEventListener("click", function(){
+             toggleDifficultyTo(this);
+             this.textContent === "Easy" ? currentNum = easyNum : currentNum = hardNum;
+             generateAndDisplayRandomColors();
+         });
     }
+}
+function toggleDifficultyTo(difficulty){
+    for(var i = 0; i < modeButtons.length; i++){
+        modeButtons[i].classList.remove('selected');
+    }
+    difficulty.classList.add('selected');
 }
