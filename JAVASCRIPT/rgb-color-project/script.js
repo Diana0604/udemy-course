@@ -16,17 +16,14 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
-//var easyBtn = document.querySelector("#easyBtn");
-//var hardBtn = document.querySelector("#hardBtn");
 var colorDisplay = document.getElementById("colorDisplay");
 var squares = document.querySelectorAll(".square");
 var currentNum = difficultyModeNums[1];
 
 //--------------------------MAIN CODE---------------------------
 generateAndDisplayRandomColors();
-//start game
+//listeners
 addClickListeners();
-//general buttons
 addResetButtonListener();
 addModeButtonListener();
 
