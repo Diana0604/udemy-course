@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Registration Form
+        </title>
+    </head>
+
+    <body>
+        <h1>Register</h1>
+        <form>
+            <!-- name -->
+            <div>
+                <label for="firstName">First Name:</label>
+                <input id="firstName" name="firstName" type="text" required placeholder="John">
+                <label for="lastName">Last Name:</label>
+                <input id="lastName" name="lastName" type="text" required placeholder="Smith">
+            </div>
+            <!-- Gender -->
+            <div>
+                <label for="male">Male</label>
+                <input id="male" name="gender" type="radio" value="male">
+                <label for="female">Female</label>
+                <input id="female" name="gender" type="radio" value="female">
+                <label for="other">Other</label>
+                <input id="other" name="gender" type="radio" value="other" checked>
+            </div>
+            <!-- contact info and password -->
+            <div>
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="your email" required>
+                <label for="password">Password:</label>
+                <input id="password" name="password" type="password" placeholder="your password"  pattern=".{5,10}" required> 
+            </div>
+            <!-- birthdate -->
+            <div>
+                <label for="year">Birthday:</label>
+                <select>
+                    <option value=" " selected disabled>Year</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1995">1995</option>
+                    <option value="old">less than 1900</option>
+                    <option value="other">Other</option>
+                </select>
+                <select>
+                    <option value=" " selected disabled>Month</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                </select>
+                <select>
+                    <option value=" " selected disabled>Day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div>
+                <label for="agreeTerms">I agree to the terms and conditions </label>
+                <input id="agreeTerms" name="agreeTerms" type="checkbox" required>
+            </div>
+            <div>
+                <input id="submit" name="submit" type="submit">
+            </div>
+        </form>
+    </body>
+</html>

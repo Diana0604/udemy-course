@@ -1,0 +1,25 @@
+img {
+    width: 30%; /* float makes objects go "out" of the general organization of stuff in the page*/
+    float : left;
+    margin : 1.66%;
+    /*
+    MARGINS AND WIDTH:
+        Each image is 30% of the total screen. 
+        There are three images in each row. 
+        So images occupy -> 3*30%=90% of the total screen. 
+        There are 6 margins in total (margin left | image | margin right | margin left | image | margin right | margin left | image | margin right
+        we want to divide the 10% of the screen betweeen 6 margins: 
+        10/6= 1.66%
+    */
+}
+
+p{
+    font-family: Raleway; 
+    margin-left: 1.66%;
+    font-weight: 800;
+    font-size: 23px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #525252;
+    width: 30%;
+    padding-bottom: 20px;
+}

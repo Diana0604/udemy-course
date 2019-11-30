@@ -1,0 +1,17 @@
+p {
+    /*Content - Width and Length -> changes the border limits*/
+    width: 50%; /*percentage according to parent element*/
+
+    /*Border*/
+    border:  2px solid blue;
+
+    /*Padding -> space between border and text changes */
+    /*padding: 10px;*/  
+    padding-left: 40px;
+
+    /*Margin*/
+    /*margin: 100px;*/
+    /*top -> right -> bottom -> left */
+    margin: 20px 10px auto auto;
+    /*if auto -> sets the same as counter part (right-left, top-bottom)
+}
